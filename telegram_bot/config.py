@@ -113,6 +113,12 @@ class PostgresConfig(BaseSettings, env_prefix="POSTGRES_"):
         )
 
 
+class NovaPoshtaConfig(BaseSettings, env_prefix="NOVA_POSHTA_"):
+    """Nova Poshta configuration"""
+
+    api_key: SecretStr
+
+
 class RedisConfig(BaseSettings, env_prefix="REDIS_"):
     """Redis configuration.
 
@@ -157,5 +163,6 @@ class Config(BaseModel):
 
     common: CommonConfig
     postgres: PostgresConfig
+    nova_poshta: NovaPoshtaConfig
     redis: RedisConfig
     webhook: WebhookConfig
